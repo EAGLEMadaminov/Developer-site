@@ -50,11 +50,13 @@ form.addEventListener("submit", async (e) => {
       window.location.replace("../dashboard.html");
     }
   } catch (error) {
-    console.log(error.message);
-    let p = document.createElement("p");
-    p.className = "my-4 mx-4 bg-rose-400 text-xl p-2 text-white";
-    p.textContent = error.message;
-    errorMessage.append(p);
+    let errors = await error.response.data.errors;
+    errors.forEach((item) => {
+      let p = document.createElement("p");
+      p.className = "my-4 mx-4 bg-rose-400 text-xl p-2 text-white";
+      p.textContent = item.msg;
+      errorMessage.append(p);
+    });
     setTimeout(() => {
       errorMessage.innerHTML = "";
     }, 3_000);

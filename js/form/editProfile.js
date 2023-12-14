@@ -24,7 +24,6 @@ let hasSocial = false;
       "x-auth-token": `${token}`,
     },
   });
-  console.log(data);
   form[0].value = data.status;
   form[1].value = data?.company;
   form[2].value = data?.website;
@@ -70,7 +69,9 @@ form.addEventListener("submit", async (e) => {
         "x-auth-token": `${token}`,
       },
     });
-    console.log(data);
+    if (data) {
+      window.location.replace("../dashboard.html");
+    }
   } catch (error) {
     console.log(error);
 

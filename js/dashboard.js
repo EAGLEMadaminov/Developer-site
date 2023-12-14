@@ -67,7 +67,6 @@ async function getCreatedProfile() {
     elShowUserInfoDiv.classList.remove("hidden");
   }
   if (data.experience.length > 0) {
-    console.log(data.experience);
     data.experience.forEach((item) => {
       const tr = document.createElement("tr");
       tr.className = "my-4";
@@ -98,7 +97,6 @@ async function getCreatedProfile() {
     });
   }
   if (data.education.length > 0) {
-    console.log(data.education);
     data.education.forEach((item) => {
       const tr = document.createElement("tr");
       tr.className = "my-4";
@@ -142,6 +140,5 @@ elDeleteUSerBtn.addEventListener("click", async () => {
       },
     });
     window.location.replace("./login.html");
-    console.log(data);
   }
 });

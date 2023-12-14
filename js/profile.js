@@ -12,21 +12,19 @@ const elEducationDiv = document.querySelector(".education");
 const elEditProfileLink = document.querySelector(".edit-profile-link");
 const elLogOutBtn = document.querySelector(".logout-btn");
 const elShowGithubRepos = document.querySelector(".show-github-repos");
-const elWithToken = document.querySelector(".with-token");
-const elWithoutToken = document.querySelector(".without-token");
+const elLoadingEffect = document.querySelector(".loading-effects");
 
+axios.defaults.baseURL = "https://nt-devconnector.onrender.com";
 const token = localStorage.getItem("token");
-if (token) {
-  elWithToken.classList.remove("hidden");
-  elWithoutToken.classList.add("hidden");
-}
 
+if (!token) {
+  window.location.replace("./login.html");
+}
 
 elLogOutBtn.addEventListener("click", () => {
   localStorage.removeItem("token");
   window.location.replace("./login.html");
 });
-axios.defaults.baseURL = "https://nt-devconnector.onrender.com";
 
 const showLocalTimeFunc = (date) => {
   let time = new Date(date);
@@ -83,7 +81,6 @@ const showUniqueProfFunc = async (item) => {
           },
         }
       );
-      console.log(github);
 
       github.forEach(showGithubRepofunc);
     } catch (error) {
@@ -172,7 +169,6 @@ const showUniqueProfFunc = async (item) => {
     elEducationDiv.append(oneDiv);
   });
   loading.remove();
-  console.log(data);
   let one = data.social;
   const socialArr = [
     data.website,
@@ -298,10 +294,12 @@ const showProfilesFunc = (item) => {
 };
 
 (async function getProfiles() {
+  elLoadingEffect.classList.remove("hidden");
   let { data } = await axios.get("/api/profile", {
     headers: {
       "x-auth-token": `${token}`,
     },
   });
   data.forEach(showProfilesFunc);
+  elLoadingEffect.classList.add("hidden");
 })();

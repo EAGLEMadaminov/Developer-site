@@ -24,7 +24,6 @@ form.addEventListener("submit", async (e) => {
     window.location.replace("./dashboard.html");
   } catch (error) {
     let errors = await error.response.data.errors;
-    console.log(errors);
     errors.forEach((item) => {
       let p = document.createElement("p");
       p.className = "my-4 mx-4 bg-rose-400 text-xl p-2 text-white";

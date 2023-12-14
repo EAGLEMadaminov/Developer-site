@@ -2,6 +2,7 @@ const form = document.querySelector("form");
 const elAddSocialBtn = document.querySelector(".add-social-btn");
 const elSocialDiv = document.querySelector(".show-social");
 const elLogOutBtn = document.querySelector(".logout-btn");
+const elErrorsInfoDiv = document.querySelector(".errors-info");
 
 const token = localStorage.getItem("token");
 if (!token) {
@@ -50,7 +51,16 @@ form.addEventListener("submit", async (e) => {
     });
     window.location.replace("../dashboard.html");
   } catch (error) {
-    console.log(error);
+    let errors = await error.response.data.errors;
+    errors.forEach((item) => {
+      let p = document.createElement("p");
+      p.className = "my-4 mx-4 bg-rose-400 text-xl p-2 text-white";
+      p.textContent = item.msg;
+      elErrorsInfoDiv.append(p);
+    });
+    setTimeout(() => {
+      elErrorsInfoDiv.innerHTML = "";
+    }, 3_000);
   }
 });
 

@@ -16,6 +16,9 @@ const elDiscusCount = document.querySelector(".discus-count");
 const elDeleteBtn = document.querySelector(".delete-btn");
 const elCommentsDiv = document.querySelector(".post-commetns-div");
 const elUniquePostForm = document.querySelector(".unique-post-form");
+const elLoadingEffects = document.querySelector(".loading-effects");
+const elErrorsInfoDiv = document.querySelector(".errors-info");
+const elImagesDiv = document.querySelector(".image-div");
 
 axios.defaults.baseURL = "https://nt-devconnector.onrender.com";
 const token = localStorage.getItem("token");
@@ -86,6 +89,10 @@ const showAllCommetnsFunc = (item, userProlie) => {
   discusBtn.addEventListener("click", () =>
     disCusPostFunc(item, likeCount, comment)
   );
+  imageDiv.addEventListener("click", () => {
+    localStorage.setItem("user_id", item.user);
+    window.location.replace("./userProfile.html");
+  });
   return postDiv;
 };
 
@@ -104,6 +111,12 @@ const deletePostCommetFunc = async (one, item) => {
 };
 
 const showUniqueCommetnsFunc = async (one, item) => {
+  elImagesDiv.addEventListener("click", () => {
+    localStorage.setItem("user_id", item.user);
+    window.location.replace("./userProfile.html");
+  });
+
+  elLoadingEffects.classList.remove("hidden");
   elCommentsDiv.innerHTML = "";
   let { data: user } = await axios.get("/api/auth", {
     headers: {
@@ -140,9 +153,13 @@ const showUniqueCommetnsFunc = async (one, item) => {
   if (one.user === user._id) {
     infoDiv.append(deleteBtn);
   }
+  elLoadingEffects.classList.add("hidden");
   postDiv.append(imageDiv, infoDiv);
   deleteBtn.addEventListener("click", () => deletePostCommetFunc(one, item));
-
+  imageDiv.addEventListener("click", () => {
+    localStorage.setItem("user_id", item.user);
+    window.location.replace("./userProfile.html");
+  });
   elCommentsDiv.append(postDiv);
 };
 
@@ -163,15 +180,26 @@ const showLocalTimeFunc = (date) => {
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
   const text = form[0].value;
-  let { data } = await axios.post(
-    "/api/posts",
-    { text },
-    {
-      headers: {
-        "x-auth-token": `${token}`,
-      },
-    }
-  );
+  try {
+    let { data } = await axios.post(
+      "/api/posts",
+      { text },
+      {
+        headers: {
+          "x-auth-token": `${token}`,
+        },
+      }
+    );
+  } catch (error) {
+    let p = document.createElement("p");
+    p.className = "my-4 mx-4 bg-rose-400 text-xl p-2 text-white";
+    p.textContent = "Something went wrong Please check again!";
+    elErrorsInfoDiv.append(p);
+
+    setTimeout(() => {
+      elErrorsInfoDiv.innerHTML = "";
+    }, 3_000);
+  }
   elUserPosts.innerHTML = "";
   form[0].value = "";
   getPosts();
@@ -184,7 +212,6 @@ const deleteMyPostFunc = async (item) => {
     },
   });
   window.location.reload();
-  console.log(data);
 };
 
 const likePostFunc = async (id, element) => {
@@ -240,16 +267,27 @@ const disCusPostFunc = async (item, element, elDiscus) => {
   elUniquePostForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const text = elUniquePostForm[0].value;
-    console.log(text);
-    let { data } = await axios.post(
-      `/api/posts/comment/${item._id}`,
-      { text },
-      {
-        headers: {
-          "x-auth-token": `${token}`,
-        },
-      }
-    ); 
+    try {
+      let { data } = await axios.post(
+        `/api/posts/comment/${item._id}`,
+        { text },
+        {
+          headers: {
+            "x-auth-token": `${token}`,
+          },
+        }
+      );
+      getPosts();
+    } catch (error) {
+      let p = document.createElement("p");
+      p.className = "my-4 mx-4 bg-rose-400 text-xl p-2 text-white";
+      p.textContent = error.message;
+      elErrorsInfoDiv.append(p);
+
+      setTimeout(() => {
+        elErrorsInfoDiv.innerHTML = "";
+      }, 3_000);
+    }
   });
 };
 
@@ -259,6 +297,7 @@ elBackToPostBtn.addEventListener("click", () => {
 });
 
 async function getPosts() {
+  elLoadingEffects.classList.remove("hidden");
   let { data } = await axios.get("/api/posts", {
     headers: {
       "x-auth-token": `${token}`,
@@ -277,5 +316,6 @@ async function getPosts() {
       elUserPosts.append(post);
     });
   }
+  elLoadingEffects.classList.add("hidden");
 }
 getPosts();
