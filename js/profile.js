@@ -12,13 +12,21 @@ const elEducationDiv = document.querySelector(".education");
 const elEditProfileLink = document.querySelector(".edit-profile-link");
 const elLogOutBtn = document.querySelector(".logout-btn");
 const elShowGithubRepos = document.querySelector(".show-github-repos");
+const elWithToken = document.querySelector(".with-token");
+const elWithoutToken = document.querySelector(".without-token");
+
+const token = localStorage.getItem("token");
+if (token) {
+  elWithToken.classList.remove("hidden");
+  elWithoutToken.classList.add("hidden");
+}
+
 
 elLogOutBtn.addEventListener("click", () => {
   localStorage.removeItem("token");
   window.location.replace("./login.html");
 });
 axios.defaults.baseURL = "https://nt-devconnector.onrender.com";
-const token = localStorage.getItem("token");
 
 const showLocalTimeFunc = (date) => {
   let time = new Date(date);

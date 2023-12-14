@@ -4,13 +4,17 @@ const elSocialDiv = document.querySelector(".show-social");
 const elErrorsInfoDiv = document.querySelector(".errors-info");
 const elLogOutBtn = document.querySelector(".logout-btn");
 
+const token = localStorage.getItem("token");
+if (!token) {
+  window.location.replace("../login.html");
+}
+
 elLogOutBtn.addEventListener("click", () => {
   localStorage.removeItem("token");
   window.location.replace("../login.html");
 });
 
 axios.defaults.baseURL = "https://nt-devconnector.onrender.com";
-const token = localStorage.getItem("token");
 
 let hasSocial = false;
 

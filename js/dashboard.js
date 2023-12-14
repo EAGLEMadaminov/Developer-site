@@ -6,8 +6,12 @@ const elShowUserInfoDiv = document.querySelector(".show-user-info");
 const elExperienceBody = document.querySelector(".experience-body");
 const elEducationBody = document.querySelector(".education-body");
 
-axios.defaults.baseURL = "https://nt-devconnector.onrender.com";
 const token = localStorage.getItem("token");
+
+if (!token) {
+  window.location.replace("./login.html");
+}
+axios.defaults.baseURL = "https://nt-devconnector.onrender.com";
 
 (async function getUserInfo() {
   let { data } = await axios.get("/api/auth", {
