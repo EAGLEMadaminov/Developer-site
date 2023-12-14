@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="header flex px-16 justify-between items-center py-4 bg-[#34393E] text-white border-b-[3px] border-[#1996AA]"
+    >
+      <a href="/" class="flex items-center hover:text-[#17A2B8]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-code-slash"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"
+          />
+        </svg>
+        <h1 class="text-3xl">DevConnector</h1>
+      </a>
+      <ul class="flex items-center">
+        <li class="mx-3 text-xl">
+          <a href="./profile.html" class="hover:text-[#17A2B8]">Developers</a>
+        </li>
+        <li class="mx-3 text-xl">
+          <a href="./post.html" class="hover:text-[#17A2B8]">Posts</a>
+        </li>
+        <li class="mx-3 text-xl">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-person-fill inline"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+            />
+          </svg>
+          <a href="./dashboard.html" class="ml-0 hover:text-[#17A2B8]"
+            >Dashboard</a
+          >
+        </li>
+        <li class="mx-3 text-xl flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-box-arrow-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+            />
+          </svg>
+          <button class="logout-btn ml-1 hover:text-[#17A2B8]">Logut</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="all-info w-[1100px] mx-auto mt-12">
+      <h1 class="text-6xl text-[#17A2B8] font-semibold">Developers</h1>
+      <p class="text-3xl font-light my-5">
+        ✡ Browse and connect with developers
+      </p>
+      <div class="show-info"></div>
+    </div>
+
+    <div class="hidden person-info container mx-auto">
+      <a href="./profile.html" class="text-xl font-light p-2 px-3 bg-[#F4F4F4]"
+        >Back To Profiles</a
+      >
+      <a href="./form/editProfile.html" class="hidden edit-profile-link bg-[#343A40] text-xl ml-2 text-white p-2 px-4"
+        >Edit Profile</a
+      >
+      <div
+        class="w-full bg-[#17A2B8] mt-5 text-white flex flex-col items-center py-10"
+      >
+        <img
+          class="w-[300px] h-[300px] rounded-[50%]"
+          src="https://gravatar.com/avatar/eeebd9666704be8010772feb8b7afdc8?d=mm&r=pg&s=200"
+          alt=""
+        />
+        <h2 class="text-6xl person-name">Name</h2>
+        <p class="company text-3xl font-light my-4">Company</p>
+        <p class="location text-xl">Location</p>
+        <ul class="social-list"></ul>
+      </div>
+      <div class="border-[4px] boder-[black] py-5 my-5 text-center">
+        <h2 class="text-3xl text-[#17A2B8]"><span class=""></span> Bio</h2>
+        <p class="user-bio text-xl my-3"></p>
+        <div class="border-[2px] mx-10 my-6"></div>
+        <h2 class="text-3xl text-[#17A2B8]">Skill Set</h2>
+        <ul class="skill-list flex w-full my-6 justify-center"></ul>
+      </div>
+
+      <div class="flex justify-around gap-4">
+        <div class="experience w-[50%] p-7 border-[4px]">
+          <h2 class="text-3xl text-[#17A2B8] font-semibold">Experience</h2>
+        </div>
+        <div class="education w-[50%] p-7 border-[4px]">
+          <h1 class="text-3xl text-[#17A2B8] font-semibold">Education</h1>
+        </div>
+      </div>
+      <h2 class="text-3xl my-5 text-[#17A2B8] font-semibold">Github Repos</h2>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="../js/profile.js"></script>
+  </body>
+</html>

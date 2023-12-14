@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div
+      class="header flex px-16 justify-between items-center py-4 bg-[#34393E] text-white border-b-[3px] border-[#1996AA]"
+    >
+      <a href="/" class="flex items-center hover:text-[#17A2B8]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-code-slash"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"
+          />
+        </svg>
+        <h1 class="text-3xl">DevConnector</h1>
+      </a>
+      <ul class="flex items-center">
+        <li class="mx-3 text-xl">
+          <a href="./profile.html" class="hover:text-[#17A2B8]">Developers</a>
+        </li>
+        <li class="mx-3 text-xl">
+          <a href="./register.html" class="hover:text-[#17A2B8]">Register</a>
+        </li>
+        <li class="mx-3 text-xl">
+          <a href="./login.html" class="hover:text-[#17A2B8]">Login</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container mx-auto p-10">
+      <h1 class="text-6xl ml-[50px] text-[#17A2B8] mt-5">Sign Up</h1>
+      <p class="flex ml-[50px] items-center mt-5 text-[#333333]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          fill="currentColor"
+          class="bi bi-person-fill inline"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+          />
+        </svg>
+        <span class="text-3xl"> Create Your Account</span>
+      </p>
+      <form class="ml-[50px]">
+        <input
+          type="text"
+          placeholder="Name"
+          class="border px-2 py-1 w-full text-2xl my-3"
+        />
+        <input
+          type="email"
+          placeholder="Email Address"
+          class="border px-2 py-1 w-full text-2xl mt-3"
+        />
+        <small class="text[rgba(0,0,0,0.4)]" style="color: rgba(0, 0, 0, 0.5)"
+          >This site uses Gravatar so if you want a profile image, use a
+          Gravatar email</small
+        >
+        <input
+          type="password"
+          placeholder="Password"
+          class="border px-2 py-1 w-full text-2xl my-3 mt-4"
+        />
+        <input
+          type="password"
+          placeholder="Confirm Password"
+          class="border px-2 py-1 w-full text-2xl my-3"
+        />
+        <button type="submit" class="bg-[#17A2B8] text-white text-xl p-2 px-3">
+          Register
+        </button>
+        <div class="flex mt-4 text-xl font-light">
+          <p>Already have an account?</p>
+          <a href="./login.html" class="ml-3 text-[#17A2B8]">Sign In</a>
+        </div>
+      </form>
+    </div>
+    <div class="absolute right-0 top-20 errors-info"></div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="../js/register.js"></script>
+  </body>
+</html>

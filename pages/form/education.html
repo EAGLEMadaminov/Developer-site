@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Devconnector</title>
+  </head>
+  <body>
+    <div
+      class="header fixed w-full flex px-16 justify-between items-center py-4 bg-[#34393E] text-white border-b-[3px] border-[#1996AA]"
+    >
+      <a href="/" class="flex items-center hover:text-[#17A2B8]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-code-slash"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"
+          />
+        </svg>
+        <h1 class="text-3xl">DevConnector</h1>
+      </a>
+      <ul class="flex items-center">
+        <li class="mx-3 text-xl">
+          <a href="../profile.html" class="hover:text-[#17A2B8]">Developers</a>
+        </li>
+        <li class="mx-3 text-xl">
+          <a href="../post.html" class="hover:text-[#17A2B8]">Posts</a>
+        </li>
+        <li class="mx-3 text-xl">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-person-fill inline"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+            />
+          </svg>
+          <a href="../dashboard.html" class="ml-0 hover:text-[#17A2B8]"
+            >Dashboard</a
+          >
+        </li>
+        <li class="mx-3 text-xl flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-box-arrow-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+            />
+          </svg>
+          <button class="logout-btn ml-1 hover:text-[#17A2B8]">Logut</button>
+        </li>
+      </ul>
+    </div>
+
+    <div class="container mx-auto p-10">
+      <h1 class="text-6xl mt-[60px] ml-[50px] text-[#17A2B8]">
+        Add Your Education
+      </h1>
+      <p class="flex ml-[50px] items-center mt-5 text-[#333333]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="16"
+          width="12"
+          viewBox="0 0 384 512"
+        >
+          <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+          <path
+            d="M384 144c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 36.4 24.3 67.1 57.5 76.8-.6 16.1-4.2 28.5-11 36.9-15.4 19.2-49.3 22.4-85.2 25.7-28.2 2.6-57.4 5.4-81.3 16.9v-144c32.5-10.2 56-40.5 56-76.3 0-44.2-35.8-80-80-80S0 35.8 0 80c0 35.8 23.5 66.1 56 76.3v199.3C23.5 365.9 0 396.2 0 432c0 44.2 35.8 80 80 80s80-35.8 80-80c0-34-21.2-63.1-51.2-74.6 3.1-5.2 7.8-9.8 14.9-13.4 16.2-8.2 40.4-10.4 66.1-12.8 42.2-3.9 90-8.4 118.2-43.4 14-17.4 21.1-39.8 21.6-67.9 31.6-10.8 54.4-40.7 54.4-75.9zM80 64c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16zm0 384c-8.8 0-16-7.2-16-16s7.2-16 16-16 16 7.2 16 16-7.2 16-16 16zm224-320c8.8 0 16 7.2 16 16s-7.2 16-16 16-16-7.2-16-16 7.2-16 16-16z"
+          />
+        </svg>
+        <span class="text-3xl font-light ml-2">
+          Add any school or bootcamp that you have attended</span
+        >
+      </p>
+      <p class="ml-[50px] mt-4">- required field</p>
+      <form class="ml-[50px]">
+        <input
+          type="text"
+          placeholder="* School or Bootcamp"
+          class="border px-2 py-1 w-full text-2xl mt-3"
+        />
+
+        <input
+          type="text"
+          placeholder="* Degree or Certificate"
+          class="border px-2 py-1 w-full text-2xl mt-4"
+        />
+
+        <input
+          type="texl"
+          placeholder="Field of study"
+          class="border px-2 py-1 w-full text-2xl mt-4"
+        />
+        <label for="from-date" class="mt-4 block text-xl">From Date</label>
+        <input
+          type="date"
+          placeholder="* Skills"
+          id="from-date"
+          class="border px-2 py-1 w-full text-2xl"
+        />
+        <label for="current" class="my-4 block text-xl font-light">
+          <input
+            class="current-job-input"
+            type="checkbox"
+            name=""
+            id="current"
+          />
+          Current Job
+        </label>
+        <label for="current" class="block text-xl">
+          To Date
+          <input
+            type="date"
+            class="border px-2 py-1 w-full text-2xl current-date"
+        /></label>
+        <textarea
+          rows="4"
+          class="w-full p-2 border text-2xl mt-3"
+          placeholder="Program Description"
+        ></textarea>
+
+        <div class="flex mt-5">
+          <button
+            type="submit"
+            class="bg-[#17A2B8] text-white text-xl p-2 px-5"
+          >
+            Submit
+          </button>
+          <a href="../dashboard.html" class="p-2 px-5 bg-[#F4F4F4] ml-5"
+            >Go Back</a
+          >
+        </div>
+      </form>
+    </div>
+    <div class="absolute right-0 top-20 errors-info"></div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="../../js/form/addEducation.js"></script>
+  </body>
+</html>

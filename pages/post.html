@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevConnector</title>
+  </head>
+  <body>
+    <div
+      class="header flex px-16 justify-between items-center py-4 bg-[#34393E] text-white border-b-[3px] border-[#1996AA]"
+    >
+      <a href="/" class="flex items-center hover:text-[#17A2B8]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="25"
+          height="25"
+          fill="currentColor"
+          class="bi bi-code-slash"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"
+          />
+        </svg>
+        <h1 class="text-3xl">DevConnector</h1>
+      </a>
+      <ul class="flex items-center">
+        <li class="mx-3 text-xl">
+          <a href="./profile.html" class="hover:text-[#17A2B8]">Developers</a>
+        </li>
+        <li class="mx-3 text-xl">
+          <a href="./post.html" class="hover:text-[#17A2B8]">Posts</a>
+        </li>
+        <li class="mx-3 text-xl">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-person-fill inline"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+            />
+          </svg>
+          <a href="./dashboard.html" class="ml-0 hover:text-[#17A2B8]"
+            >Dashboard</a
+          >
+        </li>
+        <li class="mx-3 text-xl flex items-center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            class="bi bi-box-arrow-right"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+            />
+          </svg>
+          <button class="logout-btn ml-1 hover:text-[#17A2B8]">Logut</button>
+        </li>
+      </ul>
+    </div>
+    <div class="all-posts w-[1150px] mx-auto mt-8">
+      <h1 class="text-6xl text-[#17A2B8] font-semibold">Posts</h1>
+      <div class="flex items-center mt-5 text-[#333333]">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="28"
+          height="28"
+          fill="currentColor"
+          class="bi bi-person-fill inline"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+          />
+        </svg>
+        <p class="text-3xl font-light">Welcome to the community</p>
+      </div>
+      <p class="bg-[#17A2B8] text-2xl mt-7 mb-5 p-3 text-white font-semibold">
+        Say Something...
+      </p>
+
+      <form>
+        <textarea
+          class="w-full text-2xl border-[3px] p-3"
+          cols="20"
+          rows="4"
+          required
+          placeholder="Create a post"
+        ></textarea>
+        <button
+          type="submit"
+          class="px-5 my-4 p-2 text-white text-xl bg-[#343A40]"
+        >
+          Submit
+        </button>
+      </form>
+
+      <div class="hidden users-posts"></div>
+    </div>
+
+    <div class="hidden show-unique-post w-[1150px] mx-auto mt-8">
+      <button
+        class="back-to-post-btn p-2 px-3 bg-gray-200 text-xl font-light text-gray-800"
+      >
+        Back To Posts
+      </button>
+      <div class="user-post-div border flex p-5 my-5">
+        <div class="image-div ml-20 text-center flex flex-col items-center">
+          <img
+            src=""
+            alt=""
+            class="user-image rounded-[50%] w-[100px] h-[100px]"
+          />
+          <h2 class="user-name text-xl text-[#17ABCD] font-semibold">name</h2>
+        </div>
+        <div class="info-div ml-10 flex flex-col justify-around">
+          <h2 class="user-text text-2xl font-light">text</h2>
+          <p class="user-post-time font-light my-3 text-gray-400">time</p>
+          <div class="post-bnts-div flex gap-4">
+            <button class="like-btn flex items-center p-2 px-3 bg-[#F4F4F4]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-gray-400"
+                height="25"
+                width="25"
+                viewBox="0 0 512 512"
+              >
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                <path
+                  d="M313.4 32.9c26 5.2 42.9 30.5 37.7 56.5l-2.3 11.4c-5.3 26.7-15.1 52.1-28.8 75.2H464c26.5 0 48 21.5 48 48c0 18.5-10.5 34.6-25.9 42.6C497 275.4 504 288.9 504 304c0 23.4-16.8 42.9-38.9 47.1c4.4 7.3 6.9 15.8 6.9 24.9c0 21.3-13.9 39.4-33.1 45.6c.7 3.3 1.1 6.8 1.1 10.4c0 26.5-21.5 48-48 48H294.5c-19 0-37.5-5.6-53.3-16.1l-38.5-25.7C176 420.4 160 390.4 160 358.3V320 272 247.1c0-29.2 13.3-56.7 36-75l7.4-5.9c26.5-21.2 44.6-51 51.2-84.2l2.3-11.4c5.2-26 30.5-42.9 56.5-37.7zM32 192H96c17.7 0 32 14.3 32 32V448c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32z"
+                />
+              </svg>
+              <span class="like-count"></span>
+            </button>
+            <button class="dislike-btn p-2 px-3 bg-[#F4F4F4]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-gray-400"
+                height="25"
+                width="25"
+                viewBox="0 0 512 512"
+              >
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                <path
+                  d="M313.4 479.1c26-5.2 42.9-30.5 37.7-56.5l-2.3-11.4c-5.3-26.7-15.1-52.1-28.8-75.2H464c26.5 0 48-21.5 48-48c0-18.5-10.5-34.6-25.9-42.6C497 236.6 504 223.1 504 208c0-23.4-16.8-42.9-38.9-47.1c4.4-7.3 6.9-15.8 6.9-24.9c0-21.3-13.9-39.4-33.1-45.6c.7-3.3 1.1-6.8 1.1-10.4c0-26.5-21.5-48-48-48H294.5c-19 0-37.5 5.6-53.3 16.1L202.7 73.8C176 91.6 160 121.6 160 153.7V192v48 24.9c0 29.2 13.3 56.7 36 75l7.4 5.9c26.5 21.2 44.6 51 51.2 84.2l2.3 11.4c5.2 26 30.5 42.9 56.5 37.7zM32 384H96c17.7 0 32-14.3 32-32V128c0-17.7-14.3-32-32-32H32C14.3 96 0 110.3 0 128V352c0 17.7 14.3 32 32 32z"
+                />
+              </svg>
+              <span class="disliek-count"></span>
+            </button>
+            <a
+              href=""
+              class="discus-bnt p-2 px-5 text-xl bg-[#17A2B8] text-white"
+              >Discus
+              <span class="discus-count"></span>
+            </a>
+            <button
+              class="delete-btn hidden px-3 bg-rose-500 text-xl text-white font-bold"
+            >
+              x
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-2xl my-5 bg-[#17A2B8] text-white p-2 px-3 font-bold">
+        Leave a Comment
+      </p>
+      <form class="unique-post-form">
+        <textarea
+          class="w-full text-2xl border-[3px] p-3"
+          cols="20"
+          rows="4"
+          required
+          placeholder="Create a post"
+        ></textarea>
+        <button
+          type="submit"
+          class="px-5 my-4 p-2 text-white text-xl bg-[#343A40]"
+        >
+          Submit
+        </button>
+      </form>
+
+      <div class="post-commetns-div"></div>
+    </div>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script src="../js/post.js"></script>
+  </body>
+</html>
