@@ -26,7 +26,13 @@ let hasSocial = false;
   form[2].value = data?.website;
   form[3].value = data?.location;
   form[4].value = data?.skills.toString();
+  form[5].value = data?.githubusername;
   form[6].value = data?.bio;
+  form[8].value = data?.social.twitter;
+  form[9].value = data?.social.facebook;
+  form[10].value = data?.social.youtube;
+  form[11].value = data?.social.linkedin;
+  form[12].value = data?.social.instagram;
 })();
 
 form.addEventListener("submit", async (e) => {
@@ -36,7 +42,7 @@ form.addEventListener("submit", async (e) => {
   const website = form[2].value;
   const location = form[3].value;
   const skills = form[4].value;
-  const githubuser = form[5].value;
+  const githubusername = form[5].value;
   const bio = form[6].value;
   let profile = {
     status,
@@ -44,7 +50,7 @@ form.addEventListener("submit", async (e) => {
     website,
     location,
     skills,
-    githubuser,
+    githubusername,
     bio,
   };
   if (hasSocial) {
@@ -60,7 +66,7 @@ form.addEventListener("submit", async (e) => {
         "x-auth-token": `${token}`,
       },
     });
-    window.location.replace("../dashboard.html");
+    console.log(data);
   } catch (error) {
     console.log(error);
 

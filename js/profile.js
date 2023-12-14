@@ -54,11 +54,16 @@ const showGithubRepofunc = (item) => {
 };
 
 const showUniqueProfFunc = async (item) => {
-  let { data: info } = await axios.get("/api/profile/me", {
-    headers: {
-      "x-auth-token": `${token}`,
-    },
-  });
+  if (token) {
+    let { data: info } = await axios.get("/api/profile/me", {
+      headers: {
+        "x-auth-token": `${token}`,
+      },
+    });
+    if (info._id === item._id) {
+      elEditProfileLink.classList.remove("hidden");
+    }
+  }
 
   if (item.githubusername) {
     try {
@@ -76,10 +81,6 @@ const showUniqueProfFunc = async (item) => {
     } catch (error) {
       console.log(error);
     }
-  }
-
-  if (info._id === item._id) {
-    elEditProfileLink.classList.remove("hidden");
   }
 
   elShowInfoDiv.innerHTML = "";

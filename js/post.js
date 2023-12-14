@@ -104,11 +104,13 @@ const deletePostCommetFunc = async (one, item) => {
 };
 
 const showUniqueCommetnsFunc = async (one, item) => {
+  elCommentsDiv.innerHTML = "";
   let { data: user } = await axios.get("/api/auth", {
     headers: {
       "x-auth-token": `${token}`,
     },
   });
+
   const time = showLocalTimeFunc(new Date(one.date));
   const postDiv = document.createElement("div");
   postDiv.className = "border flex p-5 my-5";
@@ -238,6 +240,7 @@ const disCusPostFunc = async (item, element, elDiscus) => {
   elUniquePostForm.addEventListener("submit", async (e) => {
     e.preventDefault();
     const text = elUniquePostForm[0].value;
+    console.log(text);
     let { data } = await axios.post(
       `/api/posts/comment/${item._id}`,
       { text },
@@ -246,7 +249,7 @@ const disCusPostFunc = async (item, element, elDiscus) => {
           "x-auth-token": `${token}`,
         },
       }
-    );
+    ); 
   });
 };
 
