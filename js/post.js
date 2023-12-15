@@ -27,21 +27,22 @@ const showAllCommetnsFunc = (item, userProlie) => {
   let count = 0;
   const time = showLocalTimeFunc(new Date(item.date));
   const postDiv = document.createElement("div");
-  postDiv.className = "border flex p-5 my-5";
+  postDiv.className = "border flex-col md:flex-row items-start flex p-5 my-5";
   imageDiv = document.createElement("div");
   const image = document.createElement("img");
   image.setAttribute("src", item.avatar);
   image.className = "rounded-[50%] w-[100px] h-[100px]";
   const name = document.createElement("p");
   name.textContent = item.name;
-  name.className = "text-xl text-[#17ABCD] font-semibold";
+  name.className =
+    "text-xl w-[100px] md:w-[300px] text-[#17ABCD] font-semibold";
   imageDiv.append(image, name);
   imageDiv.className = "ml-20 text-center flex flex-col items-center";
   const infoDiv = document.createElement("div");
-  infoDiv.className = "ml-10 flex flex-col justify-around";
+  infoDiv.className = "md:ml-10 flex flex-col justify-around";
   const text = document.createElement("h2");
   text.textContent = item.text;
-  text.className = "text-2xl font-light";
+  text.className = "text-xl mt-10 md:mt-0 md:text-2xl font-light";
   const timeP = document.createElement("p");
   timeP.textContent = `Posted on ${time}`;
   timeP.className = "font-light my-3 text-gray-400";
@@ -70,7 +71,7 @@ const showAllCommetnsFunc = (item, userProlie) => {
   discusBtn.append(comment);
   likeBtn.className = "flex items-center p-2 px-3 bg-[#F4F4F4]";
   dislikeBtn.className = "p-2 px-3 bg-[#F4F4F4]";
-  discusBtn.className = "p-2 px-5 text-xl bg-[#17A2B8] text-white";
+  discusBtn.className = "p-2 md:px-5 md:text-xl bg-[#17A2B8] text-white";
   btnsDiv.className = "flex gap-4";
   const deleteBtn = document.createElement("button");
   deleteBtn.textContent = "X";
@@ -126,7 +127,7 @@ const showUniqueCommetnsFunc = async (one, item) => {
 
   const time = showLocalTimeFunc(new Date(one.date));
   const postDiv = document.createElement("div");
-  postDiv.className = "border flex p-5 my-5";
+  postDiv.className = "border flex flex-col  md:flex-row p-5 my-5";
   imageDiv = document.createElement("div");
   const image = document.createElement("img");
   image.setAttribute("src", one.avatar);
@@ -135,12 +136,13 @@ const showUniqueCommetnsFunc = async (one, item) => {
   name.textContent = one.name;
   name.className = "text-xl text-[#17ABCD] font-semibold";
   imageDiv.append(image, name);
-  imageDiv.className = "ml-20 text-center flex flex-col items-center";
+  imageDiv.className = "md:ml-20 text-center flex flex-col items-center";
   const infoDiv = document.createElement("div");
-  infoDiv.className = "ml-10 flex flex-col justify-around";
+  infoDiv.className =
+    "ml-10 flex justify-center items-center flex-col md:justify-around";
   const text = document.createElement("h2");
   text.textContent = one.text;
-  text.className = "text-2xl font-light";
+  text.className = "text-xl md:text-2xl font-light";
   const timeP = document.createElement("p");
   timeP.textContent = `Posted on ${time}`;
   timeP.className = "font-light my-3 text-gray-400";
@@ -277,7 +279,7 @@ const disCusPostFunc = async (item, element, elDiscus) => {
           },
         }
       );
-      getPosts();
+      window.location.reload();
     } catch (error) {
       let p = document.createElement("p");
       p.className = "my-4 mx-4 bg-rose-400 text-xl p-2 text-white";
