@@ -6,14 +6,14 @@
     <title>DevConnector</title>
   </head>
   <body
-    class="overflow-hidden bg-cover bg-no-repeat relative h-screen"
+    class="overflow-hidden bg-center w-screen md:bg-cover bg-no-repeat relative h-screen"
     style="
       background-image: url('./images/709910e6-d46f-4522-ac5a-6a1c67c47caa.jpg');
     "
   >
     <div
       style="background-color: rgba(0, 0, 0, 0.8)"
-      class="header flex flex-wrap justify-center px-16 md:justify-between items-center py-4 text-white border-b-[3px] border-[#1996AA]"
+      class="header flex flex-wrap justify-center px-10 md:px-16 md:justify-between items-center py-4 text-white border-b-[3px] border-[#1996AA]"
     >
       <a href="/" class="logo flex items-center hover:text-[#17A2B8]">
         <svg
@@ -30,7 +30,7 @@
         </svg>
         <h1 class="text-3xl">DevConnector</h1>
       </a>
-      <ul class="flex items-center">
+      <ul class="flex items-center mt-3  md:mt-0">
         <li class="md:mx-3 mx-1 md:text-xl">
           <a href="./pages/NotFound.html" class="hover:text-[#17A2B8]"
             >Not Found</a
@@ -52,10 +52,11 @@
       </ul>
     </div>
     <div
-      class="header fixed w-full flex flex-wrap justify-center md:px-16 md:justify-between items-center py-4 text-white border-b-[3px] border-[#1996AA]"
+      style="background-color: rgba(0, 0, 0, 0.4)"
+      class="absolute h-screen w-screen"
     >
-      <div class="flex h-full mt-[200px] justify-center">
-        <div class="text-white px-5 md:p-0">
+      <div class="flex h-full mt-[100px] md:mt-[200px] justify-center">
+        <div class="text-white px-5 md:p-0 text-center md:text-left">
           <h2 class="mb-4 text-5xl md:text-7xl">Developer Connector</h2>
           <h4 class="mb-6 text-xl md:text-3xl">
             Create a developer profile/portfolio, share posts and get help from
