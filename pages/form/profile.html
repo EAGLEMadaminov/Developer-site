@@ -7,7 +7,8 @@
   </head>
   <body>
     <div
-      class="header fixed w-full flex px-16 justify-between items-center py-4 bg-[#34393E] text-white border-b-[3px] border-[#1996AA]"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+      class="header fixed w-full flex flex-wrap justify-center md:px-16 md:justify-between items-center py-4 text-white border-b-[3px] border-[#1996AA]"
     >
       <a href="/" class="flex items-center hover:text-[#17A2B8]">
         <svg
@@ -24,61 +25,70 @@
         </svg>
         <h1 class="text-3xl">DevConnector</h1>
       </a>
-      <ul class="flex items-center">
-        <li class="mx-3 text-xl">
+      <ul class="flex items-center mt-5 md:mt-0">
+        <li class="md:mx-3 mx-1 md:text-xl">
           <a href="../NotFound.html" class="hover:text-[#17A2B8]">Not Found</a>
         </li>
-        <li class="mx-3 text-xl">
+        <li class="md:mx-3 mx-1 md:text-xl">
           <a href="../profile.html" class="hover:text-[#17A2B8]">Developers</a>
         </li>
-        <li class="mx-3 text-xl">
+        <li class="md:mx-3 mx-1 md:text-xl">
           <a href="../post.html" class="hover:text-[#17A2B8]">Posts</a>
         </li>
-        <li class="mx-3 text-xl">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="currentColor"
-            class="bi bi-person-fill inline"
-            viewBox="0 0 16 16"
+        <li class="md:mx-3 mx-1 md:text-xl">
+          <a
+            href="../dashboard.html"
+            class="flex items-center ml-0 hover:text-[#17A2B8]"
           >
-            <path
-              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
-            />
-          </svg>
-          <a href="../dashboard.html" class="ml-0 hover:text-[#17A2B8]"
-            >Dashboard</a
-          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-person-fill inline"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+              />
+            </svg>
+            <span class="hidden md:inline ml-2"> Dashboard</span>
+          </a>
         </li>
-        <li class="mx-3 text-xl flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="currentColor"
-            class="bi bi-box-arrow-right"
-            viewBox="0 0 16 16"
+        <li class="md:mx-3 mx-1 md:text-xl flex items-center">
+          <button
+            class="flex items-center logout-btn ml-1 hover:text-[#17A2B8]"
           >
-            <path
-              fill-rule="evenodd"
-              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
-            />
-          </svg>
-          <button class="logout-btn ml-1 hover:text-[#17A2B8]">Logut</button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-box-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+              />
+            </svg>
+            <span class="hidden ml-2 md:inline"> Logut</span>
+          </button>
         </li>
       </ul>
     </div>
 
-    <div class="container mx-auto p-10">
-      <h1 class="text-6xl mt-[40px] ml-[50px] font-semibold text-[#17A2B8]">
+    <div class="container mx-auto p-5 md:px-10">
+      <h1
+        class="text-3xl md:text-6xl pt-[120px]  md:ml-[50px] font-semibold text-[#17A2B8]"
+      >
         Create Your Profile
       </h1>
-      <p class="flex ml-[50px] items-center mt-5 text-[#333333]">
+      <p class="flex md:ml-[50px] items-center mt-5 text-[#333333]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="28"
@@ -91,11 +101,13 @@
             d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
           />
         </svg>
-        <span class="text-2xl"> Let's get some information to make your</span>
+        <span class="text-xl md:text-2xl">
+          Let's get some information to make your</span
+        >
       </p>
-      <p class="ml-[50px]">- required field</p>
-      <form class="ml-[50px]">
-        <select class="w-full p-2 border mt-3 text-2xl">
+      <p class="md:ml-[50px] mt-5">- required field</p>
+      <form class="md:ml-[50px]">
+        <select class="w-full p-2 border mt-3 text-xl md:text-2xl">
           <option value="">* Select Professional Status</option>
           <option value="Developer">Developer</option>
           <option value="Junior Developer">Junior Developer</option>
@@ -106,58 +118,60 @@
           <option value="Intern">Intern</option>
           <option value="Other">Other</option>
         </select>
-        <span class="font-light mt-1 text-[#464646]"
+        <span class="font-light mt-1 text-[14px] md:text-[16px] text-[#464646]"
           >Give us an idea of where you are at in your career</span
         >
         <input
           type="text"
           placeholder="Company"
-          class="border px-2 py-1 w-full text-2xl mt-3"
+          class="border px-2 py-1 w-full text-xl md:text-2xl mt-3"
         />
-        <span class="font-light mt-1 text-[#464646]"
+        <span class="font-light text-[14px] md:text-[16px] mt-1 text-[#464646]"
           >Could be your own company or one you work for</span
         >
 
         <input
           type="text"
           placeholder="Website"
-          class="border px-2 py-1 w-full text-2xl mt-4"
+          class="border px-2 py-1 w-full text-xl md:text-2xl mt-4"
         />
-        <span class="font-light mt-1 text-[#464646]"
+        <span class="font-light text-[14px] md:text-[16px] mt-1 text-[#464646]"
           >Could be your own or a company website</span
         >
         <input
           type="texl"
           placeholder="Location"
-          class="border px-2 py-1 w-full text-2xl mt-4"
+          class="border px-2 py-1 w-full text-xl md:text-2xl mt-4"
         />
-        <span class="font-light mt-1 text-[#464646]"
+        <span class="font-light text-[14px] md:text-[16px] mt-1 text-[#464646]"
           >City & state suggested (eg. Boston, MA)</span
         >
         <input
           type="texl"
           placeholder="* Skills"
           required
-          class="border px-2 py-1 w-full text-2xl mt-4"
+          class="border px-2 py-1 w-full text-xl md:text-2xl mt-4"
         />
-        <span class="font-light mt-1 text-[#464646]"
+        <span class="font-light text-[14px] md:text-[16px] mt-1 text-[#464646]"
           >Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)</span
         >
         <input
           type="texl"
           placeholder="Github Username"
-          class="border px-2 py-1 w-full text-2xl mt-4"
+          class="border px-2 py-1 w-full text-xl md:text-2xl mt-4"
         />
-        <span class="font-light mt-1 text-[#464646]"
+        <span class="font-light text-[14px] md:text-[16px] mt-1 text-[#464646]"
           >If you want your latest repos and a Github link, include your
           username</span
         >
         <textarea
           rows="4"
-          class="w-full p-2 border text-2xl mt-3"
+          class="w-full p-2 border text-xl md:text-2xl mt-3"
           placeholder="A short bio of yourself"
         ></textarea>
-        <p class="font-light text-[#464646]">Tell us a little about yourself</p>
+        <p class="font-light text-[14px] md:text-[16px] text-[#464646]">
+          Tell us a little about yourself
+        </p>
         <button
           type="button"
           class="add-social-btn mt-10 text-xl font-light p-1 px-2 bg-[#F4F4F4] mr-3"
@@ -184,7 +198,7 @@
               name="twitter"
               id="twitter"
               placeholder="Twitter URL"
-              class="w-full ml-3 border p-2 text-2xl"
+              class="w-full ml-3 border p-2 text-xl md:text-2xl"
             />
           </label>
           <label for="Facebook" class="flex ml-5 my-4 items-center"
@@ -205,7 +219,7 @@
               name="Facebook"
               id="Facebook"
               placeholder="Facebook URL"
-              class="w-full ml-3 border p-2 text-2xl"
+              class="w-full ml-3 border p-2 text-xl md:text-2xl"
             />
           </label>
           <label for="Youtube" class="flex ml-5 my-4 items-center"
@@ -226,7 +240,7 @@
               name="Youtube"
               id="Youtube"
               placeholder="Youtube URL"
-              class="w-full ml-3 border p-2 text-2xl"
+              class="w-full ml-3 border p-2 text-xl md:text-2xl"
             />
           </label>
           <label for="Linkedin" class="flex ml-5 my-4 items-center"
@@ -247,7 +261,7 @@
               name="Linkedin"
               id="Linkedin"
               placeholder="Linkedin URL"
-              class="w-full ml-3 border p-1 text-2xl"
+              class="w-full ml-3 border p-1 text-xl md:text-2xl"
             />
           </label>
           <label for="Instagram" class="flex ml-5 my-4 items-center"
@@ -268,7 +282,7 @@
               name="Instagram"
               id="Instagram"
               placeholder="Instagram URL"
-              class="w-full ml-3 border p-1 text-2xl"
+              class="w-full ml-3 border p-1 text-xl md:text-2xl"
             />
           </label>
         </div>

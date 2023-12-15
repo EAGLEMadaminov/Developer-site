@@ -7,7 +7,8 @@
   </head>
   <body>
     <div
-      class="header flex px-16 justify-between items-center py-4 bg-[#34393E] text-white border-b-[3px] border-[#1996AA]"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+      class="header fixed w-full flex flex-wrap justify-center md:px-16 md:justify-between items-center py-4 text-white border-b-[3px] border-[#1996AA]"
     >
       <a href="/" class="flex items-center hover:text-[#17A2B8]">
         <svg
@@ -24,27 +25,27 @@
         </svg>
         <h1 class="text-3xl">DevConnector</h1>
       </a>
-      <ul class="flex items-center">
-        <li class="mx-3 text-xl">
-          <a href="./NotFound.html" class="hover:text-[#17A2B8]"
-            >Not Found</a
-          >
+      <ul class="flex mt-5 md:mt-0 items-center">
+        <li class="mx-1 md:mx-3 md:text-xl">
+          <a href="./NotFound.html" class="hover:text-[#17A2B8]">Not Found</a>
         </li>
-        <li class="mx-3 text-xl">
+        <li class="mx-1 md:mx-3 md:text-xl">
           <a href="./profile.html" class="hover:text-[#17A2B8]">Developers</a>
         </li>
-        <li class="mx-3 text-xl">
+        <li class="mx-1 md:mx-3 md:text-xl">
           <a href="./register.html" class="hover:text-[#17A2B8]">Register</a>
         </li>
-        <li class="mx-3 text-xl">
+        <li class="mx-1 md:mx-3 md:text-xl">
           <a href="./login.html" class="hover:text-[#17A2B8]">Login</a>
         </li>
       </ul>
     </div>
 
     <div class="container mx-auto p-10">
-      <h1 class="text-6xl ml-[50px] text-[#17A2B8] mt-5">Sign In</h1>
-      <p class="flex ml-[50px] items-center mt-5 text-[#333333]">
+      <h1 class="text-3xl md:text-6xl md:ml-[50px] text-[#17A2B8] mt-5">
+        Sign In
+      </h1>
+      <p class="flex md:ml-[50px] items-center mt-5 text-[#333333]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="28"
@@ -57,25 +58,25 @@
             d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
           />
         </svg>
-        <span class="text-3xl"> Sign Into Your Account</span>
+        <span class="text-xl md:text-3xl"> Sign Into Your Account</span>
       </p>
-      <form class="ml-[50px]">
+      <form class="md:ml-[50px]">
         <input
           type="email"
           placeholder="Email Address"
-          class="border px-2 py-1 w-full text-2xl mt-3"
+          class="border px-2 py-1 w-full text-xl md:text-2xl mt-3"
         />
 
         <input
           type="password"
           placeholder="Password"
-          class="border px-2 py-1 w-full text-2xl my-3 mt-4"
+          class="border px-2 py-1 w-full text-xl md:text-2xl my-3 mt-4"
         />
 
         <button type="submit" class="bg-[#17A2B8] text-white text-xl p-2 px-3">
           Login
         </button>
-        <div class="flex mt-4 text-xl font-light">
+        <div class="flex mt-4 md:text-xl md:font-light">
           <p>Don't have an account?</p>
           <a href="./register.html" class="ml-3 text-[#17A2B8]">Sign Up</a>
         </div>

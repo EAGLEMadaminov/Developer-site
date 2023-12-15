@@ -7,7 +7,8 @@
   </head>
   <body>
     <div
-      class="header flex px-16 justify-between items-center py-4 bg-[#34393E] text-white border-b-[3px] border-[#1996AA]"
+      style="background-color: rgba(0, 0, 0, 0.8)"
+      class="header fixed w-full flex flex-wrap justify-center md:px-16 md:justify-between items-center py-4 text-white border-b-[3px] border-[#1996AA]"
     >
       <a href="/" class="flex items-center hover:text-[#17A2B8]">
         <svg
@@ -22,60 +23,66 @@
             d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"
           />
         </svg>
-        <h1 class="text-3xl">DevConnector</h1>
+        <h1 class="text-xl md:text-3xl">DevConnector</h1>
       </a>
-      <ul class="flex items-center">
-        <li class="mx-3 text-xl">
+      <ul class="flex flex-wrap mt-5 md:mt-0 items-center">
+        <li class="md:mx-3 mx-2 md:text-xl">
           <a href="./NotFound.html" class="hover:text-[#17A2B8]">Not Found</a>
         </li>
-        <li class="mx-3 text-xl">
+        <li class="md:mx-3 mx-2 md:text-xl">
           <a href="./profile.html" class="hover:text-[#17A2B8]">Developers</a>
         </li>
-        <li class="mx-3 text-xl">
+        <li class="md:mx-3 mx-2 md:text-xl">
           <a href="./post.html" class="hover:text-[#17A2B8]">Posts</a>
         </li>
-        <li class="mx-3 text-xl">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="currentColor"
-            class="bi bi-person-fill inline"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
-            />
-          </svg>
-          <a href="./dashboard.html" class="ml-0 hover:text-[#17A2B8]"
-            >Dashboard</a
-          >
+        <li class="md:mx-3 mx-2 md:text-xl">
+          <a href="./dashboard.html" class="ml-0 hover:text-[#17A2B8]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-person-fill inline"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
+              />
+            </svg>
+            <span class="ml-2 hidden md:inline"> Dashboard</span>
+          </a>
         </li>
         <li class="mx-3 text-xl flex items-center">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            fill="currentColor"
-            class="bi bi-box-arrow-right"
-            viewBox="0 0 16 16"
+          <button
+            class="logout-btn flex items-center ml-1 hover:text-[#17A2B8]"
           >
-            <path
-              fill-rule="evenodd"
-              d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
-            />
-          </svg>
-          <button class="logout-btn ml-1 hover:text-[#17A2B8]">Logut</button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="currentColor"
+              class="bi bi-box-arrow-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"
+              />
+            </svg>
+            <span class="ml-2 hidden md:inline"> Logut</span>
+          </button>
         </li>
       </ul>
     </div>
 
-    <div class="w-[1100px] mx-auto mt-8">
-      <h1 class="text-6xl text-[#17A2B8] font-semibold">Dashboard</h1>
+    <div class="md:w-[1100px] px-5 md:px-0 md:mx-auto pt-[120px]">
+      <h1 class="text-3xl md:text-6xl text-[#17A2B8] font-semibold">
+        Dashboard
+      </h1>
       <div class="flex items-center mt-5 text-[#333333]">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +96,7 @@
             d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"
           />
         </svg>
-        <p class="text-3xl font-light">
+        <p class="text-xl md:text-3xl font-light">
           Welcome <span class="user-name"></span>
         </p>
       </div>
@@ -106,10 +113,10 @@
         </button>
       </div>
       <div class="hidden show-user-info my-10">
-        <div class="flex">
+        <div class="flex flex-wrap">
           <a
             href="./form/editProfile.html"
-            class="font- text-xl flex items-center mx-2 p-2 px-3 bg-[#F4F4F4]"
+            class="md:text-xl flex w-[250px] md:w-auto items-center mx-2 p-2 px-3 bg-[#F4F4F4]"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -128,7 +135,7 @@
           </a>
           <a
             href="./form/experience.html"
-            class="font- text-xl flex items-center mx-2 p-2 px-3 bg-[#F4F4F4]"
+            class="md:text-xl w-[250px] md:w-auto my-1 md:my-0 flex items-center mx-2 p-2 px-3 bg-[#F4F4F4]"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               height="16"
@@ -145,7 +152,7 @@
           </a>
           <a
             href="./form/education.html"
-            class="font- text-xl flex items-center mx-2 p-2 px-3 bg-[#F4F4F4]"
+            class="md:text-xl w-[250px] md:w-auto flex items-center mx-2 p-2 px-3 bg-[#F4F4F4]"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -166,10 +173,10 @@
         </div>
 
         <div class="experience-box mt-10">
-          <h2 class="text-3xl">Experience Credentials</h2>
+          <h2 class="text-2xl md:text-3xl">Experience Credentials</h2>
           <div class="flex mt-6">
             <table class="text-center">
-              <thead>
+              <thead class="md:text-xl md:font-bold">
                 <tr>
                   <th
                     class="p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
@@ -177,12 +184,12 @@
                     Company
                   </th>
                   <th
-                    class="p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
+                    class="hidden md:table-cell p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
                   >
                     Title
                   </th>
                   <th
-                    class="p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
+                    class="hidden md:table-cell p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
                   >
                     Years
                   </th>
@@ -191,15 +198,15 @@
                   ></th>
                 </tr>
               </thead>
-              <tbody class="experience-body"></tbody>
+              <tbody class="experience-body text-[14px] md:text-xl"></tbody>
             </table>
           </div>
         </div>
         <div class="education-box mt-10">
-          <h2 class="text-3xl">Education Credentials</h2>
+          <h2 class="text-2xl md:text-3xl">Education Credentials</h2>
           <div class="flex mt-6">
             <table class="text-center">
-              <thead>
+              <thead class="md:text-xl md:font-bold">
                 <tr>
                   <th
                     class="p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
@@ -207,12 +214,12 @@
                     School
                   </th>
                   <th
-                    class="p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
+                    class="hidden md:table-cell p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
                   >
                     Degree
                   </th>
                   <th
-                    class="p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
+                    class="hidden md:table-cell p-4 px-5 bg-[#F4F4F4] mx-1 border-white border-[10px] font-normal"
                   >
                     Years
                   </th>

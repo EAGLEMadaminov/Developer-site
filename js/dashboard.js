@@ -74,6 +74,7 @@ async function getCreatedProfile() {
       company.textContent = item.company;
       const title = document.createElement("td");
       title.textContent = item.title;
+      title.className = "hidden md:table-cell";
       const from = showLocalTimeFunc(new Date(item.from));
       let to = "Now";
       if (item.to) {
@@ -81,6 +82,7 @@ async function getCreatedProfile() {
       }
       const years = document.createElement("td");
       years.textContent = `${from}- ${to}`;
+      years.className = "my-5 md:my-0";
       const deleteTD = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "Delete";
@@ -88,7 +90,7 @@ async function getCreatedProfile() {
       deleteTD.append(deleteBtn);
       let all = [company, title, years, deleteTD];
       all.forEach((one) => {
-        one.className = "px-5";
+        one.classList.add("px-5");
       });
 
       deleteBtn.addEventListener("click", () => deleteOneExFunc(item));
@@ -103,6 +105,7 @@ async function getCreatedProfile() {
       const company = document.createElement("td");
       company.textContent = item?.school;
       const title = document.createElement("td");
+      title.className = "hidden md:table-cell";
       title.textContent = item?.degree;
       const from = showLocalTimeFunc(new Date(item.from));
       let to = "Now";
@@ -111,6 +114,7 @@ async function getCreatedProfile() {
       }
       const years = document.createElement("td");
       years.textContent = `${from}- ${to}`;
+      years.className = "my-5 md:m-0";
       const deleteTD = document.createElement("td");
       const deleteBtn = document.createElement("button");
       deleteBtn.textContent = "Delete";
@@ -118,7 +122,7 @@ async function getCreatedProfile() {
       deleteTD.append(deleteBtn);
       let all = [company, title, years, deleteTD];
       all.forEach((one) => {
-        one.className = "px-5";
+        one.classList.add("px-5");
       });
 
       deleteBtn.addEventListener("click", () => deleteOneEduCateFunc(item));

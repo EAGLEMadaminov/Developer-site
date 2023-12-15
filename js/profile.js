@@ -13,12 +13,15 @@ const elEditProfileLink = document.querySelector(".edit-profile-link");
 const elLogOutBtn = document.querySelector(".logout-btn");
 const elShowGithubRepos = document.querySelector(".show-github-repos");
 const elLoadingEffect = document.querySelector(".loading-effects");
+const elWithToken = document.querySelector(".with-token");
+const elWothoutToken = document.querySelector(".without-token");
 
 axios.defaults.baseURL = "https://nt-devconnector.onrender.com";
 const token = localStorage.getItem("token");
 
-if (!token) {
-  window.location.replace("./login.html");
+if (token) {
+  elWithToken.classList.remove("hidden");
+  elWothoutToken.classList.add("hidden");
 }
 
 elLogOutBtn.addEventListener("click", () => {
@@ -256,24 +259,23 @@ const showUniqueProfFunc = async (item) => {
 const showProfilesFunc = (item) => {
   const itemDiv = document.createElement("div");
   itemDiv.className =
-    "my-4 border bg-[#F4F4F4] justify-between p-4 flex w-full";
+    "my-4 border bg-[#F4F4F4] justify-center md:justify-between  p-4 flex w-full";
   const box = document.createElement("div");
-  box.className = "items-center flex";
-  const imageDiv = document.createElement("div");
+  box.className = "items-center justify-center  flex-wrap flex";
   const image = document.createElement("img");
   image.classList.add("rounded-[50%]");
   image.setAttribute("src", item?.user?.avatar);
-  imageDiv.append(image);
   const userInfo = document.createElement("div");
-  userInfo.className = "flex flex-col ml-[30px]";
+  userInfo.className =
+    "flex mt-10 md:mt-0 flex-col items-center md:items-start md:ml-[30px]";
   const userName = document.createElement("h2");
-  userName.className = "text-3xl";
+  userName.className = "text-2xl md:text-3xl";
   userName.textContent = item?.user?.name;
   const userComp = document.createElement("p");
-  userComp.className = "text-xl font-light mt-1";
+  userComp.className = "md:text-xl md:font-light mt-1";
   userComp.textContent = `${item?.status} at ${item?.company}`;
   const userLocation = document.createElement("p");
-  userLocation.className = "mt-5 text-xl font-light";
+  userLocation.className = "mt-5 md:text-xl md:font-light";
   userLocation.textContent = item?.location;
   const viewProfBtn = document.createElement("button");
   viewProfBtn.className =
@@ -281,8 +283,9 @@ const showProfilesFunc = (item) => {
   viewProfBtn.textContent = "View profile";
   userInfo.append(userName, userComp, userLocation, viewProfBtn);
   const skillList = document.createElement("ul");
-  skillList.className = "flex mr-[200px] text-left flex-col justify-center";
-  box.append(imageDiv, userInfo);
+  skillList.className =
+    "hidden md:flex mr-[200px] text-left flex-col justify-center";
+  box.append(image, userInfo);
   item.skills.forEach((one) => {
     const skill = document.createElement("li");
     skill.textContent = `✔ ${one}`;
